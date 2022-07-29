@@ -4,3 +4,28 @@
     padding: 0;
     box-sizing: 0;
 }
+
+
+.container {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 10px;
+}
+
+.field-header {
+    width: 100px;
+    text-align: right;
+}
+
+.field-entry {
+    flex: 1;
+}
