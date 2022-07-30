@@ -15,12 +15,9 @@
 }
 
 .field {
-    display: flex;
-    gap: 5px;
     margin: 10px 0;
 }
 
 .field-header {
     width: 150px;
-    text-align: right;
 }
