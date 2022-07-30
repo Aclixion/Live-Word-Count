@@ -15,9 +15,20 @@
 }
 
 .field {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .field-header {
     width: 150px;
+    margin-bottom: 3px;
+}
+
+.field-entry {
+    border-radius: 10px;
+    border: 0.5px solid #5d5d5d;
+    padding: 5px;
+}
+
+.text-entry {
+    resize: none;
 }
