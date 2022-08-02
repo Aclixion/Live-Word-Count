@@ -11,3 +11,28 @@ function isLetter(character) {
     
     return alphabet.includes(character.toLowerCase());
 }
+
+
+/*
+This function counts the number of words in a string. In this case, a word is defined as a group of consecutive 
+alphabetical letters separated by characters that aren't letters. To count the number of words, the number of
+word beginnings is counted, which is equal to the number of words.
+*/
+function numWords(string) {
+    // Number of words
+    let numWords = 0;
+    // Iterate through all characters
+    for (let currentIdx = 0; currentIdx < string.length; currentIdx++) {
+        // If current character is a letter
+        if (isLetter(string.charAt(currentIdx))) {
+            /*
+            If current character is first character or if previous character isn't a letter, this indicates the presence
+            of a word.
+            */
+            if (currentIdx === 0 || !isLetter(string.charAt(currentIdx - 1))) {
+                numWords++;
+            }
+        }
+    }
+    return numWords;
+}
