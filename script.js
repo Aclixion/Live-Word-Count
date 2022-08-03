@@ -1,7 +1,7 @@
 // Input for number of words to reach
-const wordTarget = document.querySelector(".word-target-entry");
+const wordTarget = document.querySelector(".word-target-input");
 // Input for text
-const textField = document.querySelector(".text-entry");
+const textField = document.querySelector(".text-input");
 // Display for whether or not the target number of words has been reached
 const wordDisplay = document.querySelector(".num-words-display");
 
@@ -11,7 +11,6 @@ function isLetter(character) {
     
     return alphabet.includes(character.toLowerCase());
 }
-
 
 /*
 This function counts the number of words in a string. In this case, a word is defined as a group of consecutive 
@@ -36,3 +35,8 @@ function numWords(string) {
     }
     return numWords;
 }
+
+textField.addEventListener("change", (event) => {
+    let numberWords = numWords(event.target.value);
+    wordDisplay.textContent = `Number of words: ${numberWords}`;
+});
