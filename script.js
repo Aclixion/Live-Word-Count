@@ -10,7 +10,6 @@ wordDisplay.textContent = "Type something in the text field. The results will ap
 // Checks whether or not a character is a letter from the English alphabet
 function isLetter(character) {
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
-    
     return alphabet.includes(character.toLowerCase());
 }
 
@@ -20,7 +19,6 @@ alphabetical letters separated by characters that aren't letters. To count the n
 word beginnings is counted, which is equal to the number of words.
 */
 function numWords(string) {
-    // Number of words
     let numWords = 0;
     // Iterate through all characters
     for (let currentIdx = 0; currentIdx < string.length; currentIdx++) {
@@ -38,7 +36,17 @@ function numWords(string) {
     return numWords;
 }
 
-textField.addEventListener("change", (event) => {
-    let numberWords = numWords(event.target.value);
+function updateResults() {
+    // Number of words in text input
+    let numberWords = numWords(textField.value);
+    // Changes text color based on number of words
+    if (numberWords >= Number(wordTarget.value)) {
+        wordDisplay.style.color = "green";
+    } else {
+        wordDisplay.style.color = "red";
+    }
+    // Update display text
     wordDisplay.textContent = `Number of words: ${numberWords}`;
-});
+}
+
+textField.addEventListener("input", updateResults);
