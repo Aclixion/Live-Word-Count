@@ -50,3 +50,4 @@ function updateResults() {
 }
 
 textField.addEventListener("input", updateResults);
+wordTarget.addEventListener("input", updateResults);
