@@ -4,6 +4,8 @@ const wordTarget = document.querySelector(".word-target-input");
 const textField = document.querySelector(".text-input");
 // Display for whether or not the target number of words has been reached
 const wordDisplay = document.querySelector(".num-words-display");
+// Set default text for word display
+wordDisplay.textContent = "Type something in the text field. The results will appear here.";
 
 // Checks whether or not a character is a letter from the English alphabet
 function isLetter(character) {
