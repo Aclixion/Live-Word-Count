@@ -1,11 +1,15 @@
 // Input for number of words to reach
-const wordTarget = document.querySelector(".word-target-input");
+const wordGoalInput = document.querySelector(".word-goal-input");
 // Input for text
-const textField = document.querySelector(".text-input");
+const textInput = document.querySelector(".text-input");
 // Display for whether or not the target number of words has been reached
-const wordDisplay = document.querySelector(".num-words-display");
+const numWordsDisplay = document.querySelector(".num-words-display");
+
 // Set default text for word display
-wordDisplay.textContent = "Type something in the text field. The results will appear here.";
+numWordsDisplay.textContent = "Type something in the text field. The results will appear here.";
+
+// Set default word goal to zero words
+wordGoalInput.value = "0";
 
 // Checks whether or not a character is a letter from the English alphabet
 function isLetter(character) {
@@ -35,3 +39,20 @@ function numWords(string) {
     }
     return numWords;
 }
+
+// Updates the number of words display
+function updateDisplay() {
+    let wordCount = numWords(textInput.value);
+    let targetWordCount = Number(wordGoalInput.value);
+    // Update display color
+    if (wordCount >= targetWordCount) {
+        numWordsDisplay.style.color = "green";
+    } else {
+        numWordsDisplay.style.color = "red";
+    }
+    // Update text display
+    numWordsDisplay.textContent = `Number of words: ${wordCount} out of ${targetWordCount}`;
+}
+
+textInput.addEventListener("input", updateDisplay);
+wordGoalInput.addEventListener("input", updateDisplay);
